@@ -1,7 +1,7 @@
 #!/bin/bash
 # make some random dns entries for unbound
 # place output in a <file>.conf
-# mv to /etc/unbound/local.d
+# ./make_unbound_rand_dns.sh | tee /etc/unbound/local.d/example_lan.conf
 
 for i in {1..254}
 do

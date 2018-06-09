@@ -2,7 +2,7 @@
 # Run script nightly from cron
 # Create html from daily nmon file
 # Rebuild index.html
-cd /var/log/nmon
+cd /var/log/nmon || exit
 /usr/local/bin/nmonchart `ls -tr *nmon | tail -1` /var/www/html/`ls -tr *nmon | tail -1`.html
 
 cd /var/www/html

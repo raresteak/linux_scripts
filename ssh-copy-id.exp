@@ -8,7 +8,7 @@ set user [lindex $argv 0]
 set host [lindex $argv 1]
 set password [lindex $argv2]
 
-spawn ssh-copy-id -i /path/to/ssh/key.pub
+spawn ssh-copy-id -i /path/to/ssh/key.pub $user@$host
 
 expect {
     "continue: { send "yes\n"; exp_continue }

@@ -1,0 +1,17 @@
+#!/usr/bin/expect -f
+# Copy ssh keys to remote hosts
+# Usage: ./ssh-copy-id.exp <remote user> <host> <remote user password>
+# Remember to unset HISTFILE
+# Update path to your identity file below
+set timeout 20
+set user [lindex $argv 0]
+set host [lindex $argv 1]
+set password [lindex $argv2]
+
+spawn ssh-copy-id -i /path/to/ssh/key.pub
+
+expect {
+    "continue: { send "yes\n"; exp_continue }
+    "assword:" { send "$password\n"; }
+}
+expect eof
